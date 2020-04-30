@@ -1,14 +1,16 @@
-import RPi.GPIO as GPIO
+import OPi.GPIO as GPIO
 import dht11
 import time
 import datetime
 
 # initialize GPIO
+GPIO.setboard(GPIO.PRIME)    # Orange Pi PC board
 GPIO.setwarnings(True)
-GPIO.setmode(GPIO.BCM)
+#GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BOARD)
 
 # read data using pin 14
-instance = dht11.DHT11(pin=14)
+instance = dht11.DHT11(pin=35)
 
 try:
 	while True:
